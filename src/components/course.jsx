@@ -1,6 +1,14 @@
 import { Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Text } from "@chakra-ui/react";
 
-function Course({course}) {
+const handleDeleteCourse = (id) => {
+  fetch(`http://localhost:3000/course/${id}`, {
+    method: "DELETE",
+  })
+    .then(() => window.location.reload())
+    .catch(erro => console.log(erro))
+}
+
+function Course({courseData}) {
   return (
     <Card maxW='sm' >
       <CardBody>
@@ -10,10 +18,10 @@ function Course({course}) {
           height="150px"
           />
         <Heading>
-          {course.title}
+          {courseData.attributes.title}
         </Heading>
         <Text>
-          {course.description}
+          {courseData.attributes.description}
         </Text>
       </CardBody>
 
@@ -23,7 +31,7 @@ function Course({course}) {
             Editar
           </Button>
 
-          <Button>
+          <Button onClick={() => handleDeleteCourse(courseData.id)}>
             Deletar
           </Button>
         </ButtonGroup>
