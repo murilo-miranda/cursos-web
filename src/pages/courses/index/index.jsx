@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Course from "../../../components/course";
+import { Heading } from "@chakra-ui/react";
 
 function IndexPage() {
 	const [courses, setCourses] = useState([]);
@@ -18,17 +20,12 @@ function IndexPage() {
 
 	return (
 		<>
-			<h1>Cursos disponiveis</h1>
+			<Heading>
+				Cursos disponiveis
+			</Heading>
+			
 			{courses?.data?.map((course) => (
-				<>
-						<img
-						src="https://cdn.pixabay.com/photo/2023/01/10/03/57/digits-7708860_1280.jpg"
-						alt="Foto"
-						height="150px"
-					/>
-					<p> {course.attributes.title} </p>
-					<p> {course.attributes.description} </p>
-				</>
+				<Course course={course.attributes}/>					
 			))}
 		</>
 	);
