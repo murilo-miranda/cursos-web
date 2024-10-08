@@ -25,7 +25,7 @@ function IndexPage() {
 			</Heading>
 			
 			{courses?.data?.map((course) => (
-				<Course course={course.attributes}/>					
+				<Course courseData={course}/>					
 			))}
 		</>
 	);
