@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, Card, CardBody, CardFooter, Heading, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const handleDeleteCourse = (id) => {
   fetch(`http://localhost:3000/course/${id}`, {
@@ -27,9 +28,19 @@ function Course({courseData}) {
 
       <CardFooter>
         <ButtonGroup>
-          <Button>
-            Editar
-          </Button>
+          <Link 
+            to='course/edit' 
+            state={
+              { 
+                id: courseData.id, 
+                title: courseData.attributes.title,
+                description: courseData.attributes.description,
+                endDate: courseData.attributes.end_date,
+              }}>
+            <Button>
+              Editar
+            </Button>
+          </Link>
 
           <Button onClick={() => handleDeleteCourse(courseData.id)}>
             Deletar
