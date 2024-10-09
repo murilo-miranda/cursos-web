@@ -8,6 +8,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import CreateForm from './pages/courses/form/create';
+import EditForm from './pages/courses/form/edit'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
         path: "/", element: <IndexPage />
       },
       {
-        path: "course/:id", element: <ShowPage />
+        path: "course/edit", element: <EditForm />
       },
       {
         path: "course/create", element: <CreateForm />
