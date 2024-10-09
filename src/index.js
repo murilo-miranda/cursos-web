@@ -7,6 +7,7 @@ import ShowPage from './pages/courses/show';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+import CreateForm from './pages/courses/form/create';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,9 @@ const router = createBrowserRouter([
   },
   {
     path: "course/:id", element: <ShowPage />
+  },
+  {
+    path: "course/create", element: <CreateForm />
   }
 ])
 
