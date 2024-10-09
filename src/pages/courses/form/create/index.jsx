@@ -17,7 +17,21 @@ function CreateForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    alert(`Title: ${title} & Description: ${description} & Data: ${endDate}`);
+
+    fetch('http://localhost:3000/course', {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({
+        title: title,
+        description: description,
+        end_date: endDate
+      })
+    })
+      .then(() => alert('Criado com sucesso'))
+      .then(() => window.location.reload())
+      .catch(error => alert(error))
   };
 
   return (
