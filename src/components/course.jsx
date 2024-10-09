@@ -11,7 +11,7 @@ const handleDeleteCourse = (id) => {
 
 function Course({courseData}) {
   return (
-    <Card maxW='sm' >
+    <Card maxW='sm' variant="outline" marginBottom={5}>
       <CardBody>
         <img
           src="https://cdn.pixabay.com/photo/2023/01/10/03/57/digits-7708860_1280.jpg"
@@ -26,7 +26,7 @@ function Course({courseData}) {
         </Text>
       </CardBody>
 
-      <CardFooter>
+      <CardFooter display="block">
         <ButtonGroup>
           <Link 
             to='course/edit' 

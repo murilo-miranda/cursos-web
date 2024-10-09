@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Course from "../../../components/course";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Flex } from "@chakra-ui/react";
 
 function IndexPage() {
 	const [courses, setCourses] = useState([]);
