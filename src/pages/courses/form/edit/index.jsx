@@ -53,15 +53,15 @@ function EditForm() {
 
         <Box my={4} textAlign="left">
           <form>
-            <FormControl isRequired >
+            <FormControl >
               <FormLabel>Titulo</FormLabel>
               <Input type="text" placeholder={state.title} onChange={event => setTitle(event.currentTarget.value)}/>
             </FormControl>
-            <FormControl isRequired >
+            <FormControl >
               <FormLabel>Descricao do curso</FormLabel>
               <Textarea placeholder={state.description} onChange={event => setDescription(event.currentTarget.value)}/>
             </FormControl>
-            <FormControl isRequired>
+            <FormControl>
               <FormLabel>Data de termino</FormLabel>
               <Input type="text" placeholder={formatDate(state.endDate)} onFocus={(event) => event.target.type="date"} onChange={event => setEndDate(event.currentTarget.value)}></Input>
             </FormControl>
